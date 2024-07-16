@@ -1,0 +1,17 @@
+services:
+  zookeeper:
+    image: bitnami/zookeeper:3.6
+    container_name: zookeeper
+    ports:
+      - 2181:2181
+    volumes:
+      - ./persistence-data-zookeeper:/bitnami/zookeeper
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=yes
+    networks:
+      - data-ingestion-practice 
+
+networks:
+  data-ingestion-practice:
+    name: data-ingestion-practice
+    external: true
