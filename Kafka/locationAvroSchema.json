@@ -1,0 +1,9 @@
+{
+    "name": "Location",
+    "type": "record",
+    "fields": [
+      {"name": "longitude", "type": "float"},
+      {"name": "latitude", "type": "float"},
+      {"name": "timestamp", "type": "long"}
+    ]
+}
