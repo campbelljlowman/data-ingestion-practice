@@ -1,0 +1,18 @@
+services:
+  cassandra:
+    image: cassandra:4.1.5
+    container_name: cassandra
+    ports:
+      - "9042:9042"
+    environment:
+      - CASSANDRA_USER=asdf
+      - CASSANDRA_PASSWORD=asdf
+    volumes:
+      - ./persistence-data-cassandra:/var/lib/cassandra
+    networks:
+      - data-ingestion-practice
+
+networks:
+  data-ingestion-practice:
+    name: data-ingestion-practice
+    external: true
